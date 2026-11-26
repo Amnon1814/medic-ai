@@ -1,0 +1,291 @@
+/* =====================================================
+   MEDIC.AI — HEALTH CHARTS
+   PREMIUM GREEN & WHITE THEME
+   ===================================================== */
+
+/* MAIN CHART PANEL */
+
+.health-chart-panel {
+    width: 100%;
+    min-width: 0;
+    padding: 25px;
+
+    background: #FFFFFF;
+    border: 1px solid #DCE9DF;
+    border-radius: 20px;
+
+    box-shadow: 0 4px 16px rgba(22, 101, 52, 0.05);
+
+    transition: box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.health-chart-panel:hover {
+    border-color: #B7DCC4;
+    box-shadow: 0 8px 25px rgba(22, 101, 52, 0.07);
+}
+
+/* =====================================================
+   PANEL HEADER
+   ===================================================== */
+
+.health-chart-panel .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.health-chart-panel .panel-header h2 {
+    margin: 0;
+
+    color: #14532D;
+    font-size: 17px;
+    font-weight: 750;
+    letter-spacing: -0.3px;
+}
+
+.health-chart-panel .panel-header p {
+    margin: 7px 0 0;
+
+    color: #64748B;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* =====================================================
+   CHART STATUS BADGE
+   ===================================================== */
+
+.chart-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 8px 12px;
+
+    background: #F0FDF4;
+    border: 1px solid #DCFCE7;
+    border-radius: 20px;
+
+    color: #15803D;
+    font-size: 10px;
+    font-weight: 650;
+
+    white-space: nowrap;
+}
+
+.chart-status-dot {
+    width: 7px;
+    height: 7px;
+
+    background: #16A34A;
+    border-radius: 50%;
+}
+
+/* =====================================================
+   CHART SUMMARY
+   ===================================================== */
+
+.chart-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-bottom: 20px;
+    padding: 17px 19px;
+
+    background: #F6FAF7;
+    border: 1px solid #E5EEE7;
+    border-radius: 14px;
+}
+
+.chart-summary-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #64748B;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.chart-summary strong {
+    color: #14532D;
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.chart-summary strong small {
+    color: #64748B;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.chart-summary-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #64748B;
+    font-size: 11px;
+}
+
+.chart-line-indicator {
+    width: 22px;
+    height: 3px;
+
+    background: #16A34A;
+    border-radius: 5px;
+}
+
+/* =====================================================
+   CHART CONTAINER
+   ===================================================== */
+
+.health-chart-container {
+    width: 100%;
+    height: 300px;
+    min-width: 0;
+    margin-top: 5px;
+}
+
+/* =====================================================
+   CHART FOOTER
+   ===================================================== */
+
+.chart-footer {
+    margin-top: 15px;
+    padding-top: 13px;
+
+    border-top: 1px solid #E5EEE7;
+
+    color: #94A3B8;
+    font-size: 11px;
+    text-align: right;
+}
+
+/* =====================================================
+   EMPTY CHART STATE
+   ===================================================== */
+
+.activity-placeholder {
+    min-height: 260px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 20px;
+
+    background: #F8FBF8;
+    border: 1px dashed #B7DCC4;
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+.chart-empty-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    background: #E8F5EC;
+    border-radius: 18px;
+
+    font-size: 27px;
+}
+
+.activity-placeholder h3 {
+    margin: 0;
+
+    color: #14532D;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.activity-placeholder p {
+    max-width: 300px;
+
+    margin: 9px 0 0;
+
+    color: #64748B;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN — TABLET
+   ===================================================== */
+
+@media (max-width: 768px) {
+    .health-chart-panel {
+        padding: 20px;
+    }
+
+    .health-chart-container {
+        height: 270px;
+    }
+
+    .chart-summary {
+        padding: 15px;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN — MOBILE
+   ===================================================== */
+
+@media (max-width: 500px) {
+    .health-chart-panel {
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .health-chart-panel .panel-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .chart-status-badge {
+        font-size: 9px;
+    }
+
+    .chart-summary {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .chart-summary strong {
+        font-size: 24px;
+    }
+
+    .health-chart-container {
+        height: 240px;
+    }
+
+    .activity-placeholder {
+        min-height: 220px;
+    }
+}
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .health-chart-panel {
+        transition: none;
+    }
+}

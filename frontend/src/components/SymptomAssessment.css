@@ -1,0 +1,804 @@
+/* =========================================
+   MEDIC.AI - SYMPTOM ASSESSMENT
+========================================= */
+
+.symptom-page {
+    width: 100%;
+    min-height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    background: #f4f8f5;
+    color: #1e293b;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.symptom-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 28px;
+}
+
+.symptom-header-icon {
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: #ccfbf1;
+    color: #0d9488;
+}
+
+.symptom-header h1 {
+    margin: 0;
+    color: #134e4a;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.symptom-header p {
+    margin: 6px 0 0;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   GRID AND CARDS
+========================================= */
+
+.symptom-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.symptom-form-card,
+.symptom-result-card {
+    min-width: 0;
+    padding: 25px;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid #e2eee5;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.035);
+}
+
+/* =========================================
+   FORM CARD HEADING
+========================================= */
+
+.symptom-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    color: #0d9488;
+}
+
+.symptom-card-heading h2 {
+    margin: 0;
+    color: #134e4a;
+    font-size: 18px;
+    font-weight: 750;
+}
+
+/* =========================================
+   FORM FIELDS
+========================================= */
+
+.symptom-field {
+    margin-bottom: 23px;
+}
+
+.symptom-field>label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    color: #334155;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.symptom-field input,
+.symptom-field select,
+.symptom-field textarea {
+    width: 100%;
+    min-height: 44px;
+    padding: 12px 14px;
+    box-sizing: border-box;
+    border: 1px solid #d1e7d8;
+    border-radius: 10px;
+    outline: none;
+    background: #ffffff;
+    color: #1e293b;
+    font-family: inherit;
+    font-size: 13px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.symptom-field input:focus,
+.symptom-field select:focus,
+.symptom-field textarea:focus {
+    border-color: #0d9488;
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.12);
+}
+
+.symptom-field input::placeholder,
+.symptom-field textarea::placeholder {
+    color: #94a3b8;
+}
+
+.symptom-field textarea {
+    min-height: 110px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.symptom-field select {
+    cursor: pointer;
+}
+
+/* =========================================
+   SYMPTOM SELECTION
+========================================= */
+
+.symptom-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.symptom-option {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 13px;
+    border: 1px solid #d1e7d8;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #475569;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.symptom-option:hover {
+    border-color: #0d9488;
+    background: #f0fdfa;
+    color: #0f766e;
+}
+
+.symptom-option.selected {
+    border-color: #0d9488;
+    background: #ccfbf1;
+    color: #0f766e;
+    font-weight: 700;
+}
+
+/* =========================================
+   SEVERITY SELECTION
+========================================= */
+
+.severity-options {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.severity-option {
+    position: relative;
+    padding: 14px 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #ffffff;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Mild */
+
+.severity-option.mild {
+    color: #15803d;
+    border-color: #bbf7d0;
+    background: #f0fdf4;
+}
+
+.severity-option.mild:hover,
+.severity-option.selected.mild {
+    background: #dcfce7;
+    border-color: #22c55e;
+    color: #166534;
+}
+
+/* Moderate */
+
+.severity-option.moderate {
+    color: #b45309;
+    border-color: #fde68a;
+    background: #fffbeb;
+}
+
+.severity-option.moderate:hover,
+.severity-option.selected.moderate {
+    background: #fef3c7;
+    border-color: #f59e0b;
+    color: #92400e;
+}
+
+/* Severe */
+
+.severity-option.severe {
+    color: #dc2626;
+    border-color: #fecaca;
+    background: #fef2f2;
+}
+
+.severity-option.severe:hover,
+.severity-option.selected.severe {
+    background: #fee2e2;
+    border-color: #ef4444;
+    color: #991b1b;
+}
+
+/* Selected severity */
+
+.severity-option.selected {
+    border-width: 2px;
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.08);
+}
+
+.severity-description {
+    margin: 12px 0 0;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #f8fafc;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   ERROR MESSAGE
+========================================= */
+
+.symptom-error {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 13px 14px;
+    margin-bottom: 18px;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+.symptom-error svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.symptom-error p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.symptom-submit-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px;
+    border: none;
+    border-radius: 11px;
+    background: #0d9488;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 750;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.symptom-submit-button:hover {
+    background: #0f766e;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 14px rgba(13, 148, 136, 0.18);
+}
+
+.symptom-submit-button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.symptom-disclaimer {
+    margin: 15px 0 0;
+    color: #94a3b8;
+    font-size: 11px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* =========================================
+   RESULTS HEADER
+========================================= */
+
+.symptom-result-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2eee5;
+}
+
+.result-icon {
+    width: 43px;
+    height: 43px;
+    min-width: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #ccfbf1;
+    color: #0d9488;
+}
+
+.symptom-result-heading h2 {
+    margin: 0;
+    color: #134e4a;
+    font-size: 17px;
+    font-weight: 750;
+}
+
+.symptom-result-heading p {
+    margin: 5px 0 0;
+    color: #64748b;
+    font-size: 12px;
+}
+
+/* =========================================
+   EMPTY RESULT STATE
+========================================= */
+
+.symptom-result-empty {
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.result-empty-icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: #f0fdfa;
+    color: #0d9488;
+}
+
+.symptom-result-empty h3 {
+    margin: 0 0 10px;
+    color: #134e4a;
+    font-size: 16px;
+    font-weight: 750;
+}
+
+.symptom-result-empty p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* =========================================
+   LOADING STATE
+========================================= */
+
+.symptom-loading {
+    padding: 55px 15px;
+    color: #0d9488;
+    text-align: center;
+}
+
+.symptom-loading>svg {
+    animation: symptom-spin 1.5s linear infinite;
+}
+
+.symptom-loading h3 {
+    margin: 15px 0 8px;
+    color: #134e4a;
+    font-size: 16px;
+}
+
+.symptom-loading p {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+@keyframes symptom-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =========================================
+   RESULT CONTENT
+========================================= */
+
+.symptom-result-content {
+    padding-top: 22px;
+}
+
+.urgency-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 17px;
+    border: 1px solid #99f6e4;
+    border-radius: 12px;
+    background: #f0fdfa;
+}
+
+.urgency-box span {
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.urgency-box strong {
+    color: #0f766e;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.result-section {
+    margin-top: 23px;
+}
+
+.result-section h3 {
+    margin: 0 0 12px;
+    color: #134e4a;
+    font-size: 15px;
+    font-weight: 750;
+}
+
+.result-section p {
+    margin: 0;
+    color: #475569;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.result-section ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.result-section li {
+    margin-bottom: 10px;
+    color: #475569;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* =========================================
+   RESULT WARNING
+========================================= */
+
+.result-warning {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px;
+    margin-top: 25px;
+    border: 1px solid #fed7aa;
+    border-radius: 12px;
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.result-warning svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.result-warning p {
+    margin: 0;
+    color: #9a3412;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.symptom-option:focus-visible,
+.severity-option:focus-visible,
+.symptom-submit-button:focus-visible {
+    outline: 3px solid #5eead4;
+    outline-offset: 3px;
+}
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+html.medic-dark-mode .symptom-page {
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+html.medic-dark-mode .symptom-header h1,
+html.medic-dark-mode .symptom-card-heading h2,
+html.medic-dark-mode .symptom-result-heading h2,
+html.medic-dark-mode .symptom-result-empty h3,
+html.medic-dark-mode .symptom-loading h3,
+html.medic-dark-mode .result-section h3 {
+    color: #ccfbf1;
+}
+
+html.medic-dark-mode .symptom-header p,
+html.medic-dark-mode .symptom-result-heading p,
+html.medic-dark-mode .symptom-result-empty p,
+html.medic-dark-mode .symptom-loading p {
+    color: #94a3b8;
+}
+
+html.medic-dark-mode .symptom-form-card,
+html.medic-dark-mode .symptom-result-card {
+    background: #162337;
+    border-color: #26364a;
+    box-shadow: none;
+}
+
+html.medic-dark-mode .symptom-field>label {
+    color: #cbd5e1;
+}
+
+html.medic-dark-mode .symptom-field input,
+html.medic-dark-mode .symptom-field select,
+html.medic-dark-mode .symptom-field textarea {
+    background: #0f1b2d;
+    border-color: #334155;
+    color: #e2e8f0;
+}
+
+html.medic-dark-mode .symptom-field input::placeholder,
+html.medic-dark-mode .symptom-field textarea::placeholder {
+    color: #64748b;
+}
+
+html.medic-dark-mode .symptom-option {
+    background: #0f1b2d;
+    border-color: #334155;
+    color: #cbd5e1;
+}
+
+html.medic-dark-mode .symptom-option:hover {
+    background: #153b3a;
+    border-color: #0d9488;
+    color: #99f6e4;
+}
+
+html.medic-dark-mode .symptom-option.selected {
+    background: #164e49;
+    border-color: #2dd4bf;
+    color: #99f6e4;
+}
+
+html.medic-dark-mode .severity-option.mild {
+    background: #123322;
+    border-color: #166534;
+    color: #86efac;
+}
+
+html.medic-dark-mode .severity-option.selected.mild {
+    background: #14532d;
+    border-color: #22c55e;
+}
+
+html.medic-dark-mode .severity-option.moderate {
+    background: #3b2b12;
+    border-color: #92400e;
+    color: #fcd34d;
+}
+
+html.medic-dark-mode .severity-option.selected.moderate {
+    background: #78350f;
+    border-color: #f59e0b;
+}
+
+html.medic-dark-mode .severity-option.severe {
+    background: #3f171c;
+    border-color: #991b1b;
+    color: #fca5a5;
+}
+
+html.medic-dark-mode .severity-option.selected.severe {
+    background: #7f1d1d;
+    border-color: #ef4444;
+}
+
+html.medic-dark-mode .severity-description {
+    background: #0f1b2d;
+    color: #94a3b8;
+}
+
+html.medic-dark-mode .symptom-result-heading {
+    border-bottom-color: #334155;
+}
+
+html.medic-dark-mode .result-icon,
+html.medic-dark-mode .symptom-header-icon,
+html.medic-dark-mode .result-empty-icon {
+    background: #164e49;
+    color: #99f6e4;
+}
+
+html.medic-dark-mode .urgency-box {
+    background: #102c2c;
+    border-color: #20534e;
+}
+
+html.medic-dark-mode .urgency-box span {
+    color: #94a3b8;
+}
+
+html.medic-dark-mode .urgency-box strong {
+    color: #99f6e4;
+}
+
+html.medic-dark-mode .result-section p,
+html.medic-dark-mode .result-section li {
+    color: #cbd5e1;
+}
+
+html.medic-dark-mode .result-warning {
+    background: #382718;
+    border-color: #854d0e;
+}
+
+html.medic-dark-mode .result-warning p {
+    color: #fed7aa;
+}
+
+html.medic-dark-mode .symptom-disclaimer {
+    color: #64748b;
+}
+
+html.medic-dark-mode .symptom-error {
+    background: #3f171c;
+    border-color: #991b1b;
+    color: #fca5a5;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1100px) {
+    .symptom-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .symptom-page {
+        padding: 22px 18px;
+    }
+
+    .symptom-header h1 {
+        font-size: 23px;
+    }
+
+    .symptom-form-card,
+    .symptom-result-card {
+        padding: 21px;
+    }
+}
+
+@media (max-width: 650px) {
+    .symptom-page {
+        padding: 18px 14px;
+    }
+
+    .symptom-header {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .symptom-header-icon {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+        border-radius: 12px;
+    }
+
+    .symptom-header h1 {
+        font-size: 21px;
+    }
+
+    .symptom-header p {
+        font-size: 12px;
+    }
+
+    .symptom-form-card,
+    .symptom-result-card {
+        padding: 17px;
+        border-radius: 14px;
+    }
+
+    .symptom-card-heading h2 {
+        font-size: 16px;
+    }
+
+    .severity-options {
+        gap: 7px;
+    }
+
+    .severity-option {
+        padding: 12px 5px;
+        font-size: 12px;
+    }
+
+    .symptom-option {
+        padding: 9px 10px;
+        font-size: 11px;
+    }
+
+    .symptom-result-empty {
+        padding: 40px 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .severity-options {
+        grid-template-columns: 1fr;
+    }
+
+    .symptom-header h1 {
+        font-size: 19px;
+    }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .symptom-page *,
+    .symptom-page *::before,
+    .symptom-page *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

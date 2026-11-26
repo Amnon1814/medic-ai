@@ -1,0 +1,43 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Node
+node_modules/
+dist/
+build/
+coverage/
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# AI vector database
+chroma_store/
+**/chroma_store/
+
+# Uploaded medical records and generated data
+backend/uploads/
+backend/data/
+
+# Logs
+*.log
+*.tmp
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

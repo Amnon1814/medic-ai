@@ -1,0 +1,1207 @@
+/* ==========================================
+   MEDIC.AI - LIGHT GREEN HEALTHCARE CHAT
+   Static UI | No animations | Responsive
+========================================== */
+
+.medic-chat-layout {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+    background: #F4F8F5;
+    color: #1F2937;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ==========================================
+   CHAT HISTORY SIDEBAR
+========================================== */
+
+.medic-chat-history {
+    width: 270px;
+    min-width: 270px;
+    display: flex;
+    flex-direction: column;
+    background: #D9F0E1;
+    border-right: 1px solid #C3E3CE;
+    padding: 20px 14px;
+    overflow: hidden;
+}
+
+.history-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 10px 22px;
+}
+
+.history-brand-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #16A34A;
+    color: white;
+    border-radius: 12px;
+}
+
+.history-brand-text {
+    font-size: 19px;
+    font-weight: 700;
+    color: #14532D;
+}
+
+.history-new-chat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #B7DFC5;
+    border-radius: 12px;
+    background: #FFFFFF;
+    color: #166534;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.history-new-chat:hover {
+    background: #F0FDF4;
+    border-color: #16A34A;
+}
+
+.history-create-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 11px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 12px;
+    background: #16A34A;
+    color: #FFFFFF;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.history-create-button:hover {
+    background: #15803D;
+}
+
+.history-section-title {
+    margin: 25px 10px 12px;
+    color: #4B7258;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.history-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 3px;
+}
+
+.history-group {
+    margin-bottom: 14px;
+}
+
+.history-chat-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 10px;
+    color: #365C43;
+    cursor: pointer;
+}
+
+.history-chat-item:hover {
+    background: #C9E8D4;
+}
+
+.history-chat-item.active {
+    background: #B7DFC5;
+    color: #14532D;
+}
+
+.history-chat-select {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.history-delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 7px;
+    background: transparent;
+    color: #64836D;
+    cursor: pointer;
+}
+
+.history-delete:hover {
+    background: #FEE2E2;
+    color: #DC2626;
+}
+
+.history-empty {
+    padding: 15px 10px;
+    color: #64836D;
+    font-size: 13px;
+}
+
+.history-footer {
+    padding: 12px 8px;
+    border-top: 1px solid #C3E3CE;
+    color: #64836D;
+    font-size: 12px;
+}
+
+/* ==========================================
+   MAIN CHAT AREA
+========================================== */
+
+.medic-chat-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    background: #FFFFFF;
+}
+
+/* ==========================================
+   CHAT HEADER
+========================================== */
+
+.medic-chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 26px;
+    background: #FFFFFF;
+    border-bottom: 1px solid #E2EEE5;
+}
+
+.chat-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.chat-header-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #DCFCE7;
+    color: #16A34A;
+    border-radius: 12px;
+}
+
+.chat-header-info h3 {
+    margin: 0;
+    color: #14532D;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.chat-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+    color: #64748B;
+    font-size: 12px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22C55E;
+}
+
+.chat-header-new {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border: 1px solid #C3E3CE;
+    border-radius: 10px;
+    background: #FFFFFF;
+    color: #166534;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.chat-header-new:hover {
+    background: #F0FDF4;
+}
+
+/* ==========================================
+   CHAT CONTENT
+========================================== */
+
+.medic-chat-content {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 30px;
+    background: #FFFFFF;
+}
+
+/* ==========================================
+   WELCOME SCREEN
+========================================== */
+
+.medic-chat-welcome {
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.welcome-glow {
+    display: none;
+}
+
+.welcome-icon {
+    width: 76px;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 22px;
+    background: #DCFCE7;
+    color: #16A34A;
+    border-radius: 24px;
+}
+
+.welcome-eyebrow {
+    color: #16A34A;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.medic-chat-welcome h1 {
+    margin: 15px 0;
+    color: #14532D;
+    font-size: 34px;
+    font-weight: 750;
+}
+
+.medic-chat-welcome h1 span {
+    color: #16A34A;
+}
+
+.welcome-description {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #64748B;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   SUGGESTION CARDS
+========================================== */
+
+.medic-suggestions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    max-width: 850px;
+    margin: 35px auto 0;
+}
+
+.medic-suggestion-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border: 1px solid #E2EEE5;
+    border-radius: 16px;
+    background: #FFFFFF;
+    text-align: left;
+    cursor: pointer;
+}
+
+.medic-suggestion-card:hover {
+    border-color: #86C99D;
+    background: #F8FCF9;
+}
+
+.suggestion-icon {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    background: #DCFCE7;
+    color: #16A34A;
+}
+
+.suggestion-content {
+    flex: 1;
+}
+
+.suggestion-content h3 {
+    margin: 0 0 6px;
+    color: #14532D;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.suggestion-content p {
+    margin: 0;
+    color: #64748B;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.suggestion-arrow {
+    color: #86C99D;
+}
+
+/* ==========================================
+   CONVERSATION MESSAGES
+========================================== */
+
+.medic-conversation {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.medic-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    max-width: 100%;
+}
+
+.medic-message.user {
+    flex-direction: row-reverse;
+}
+
+.medic-message-avatar {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: #DCFCE7;
+    color: #16A34A;
+}
+
+.medic-message.user .medic-message-avatar {
+    background: #16A34A;
+    color: #FFFFFF;
+}
+
+.medic-message-content {
+    max-width: 80%;
+    padding: 16px 18px;
+    border-radius: 18px;
+    background: #E8F5EC;
+    color: #1F2937;
+}
+
+.medic-message.user .medic-message-content {
+    background: #16A34A;
+    color: #FFFFFF;
+    border-radius: 18px 18px 4px 18px;
+}
+
+.medic-message.assistant .medic-message-content {
+    border-radius: 18px 18px 18px 4px;
+}
+
+.medic-message-label {
+    margin-bottom: 7px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #166534;
+}
+
+.medic-message.user .medic-message-label {
+    color: #DCFCE7;
+}
+
+.medic-message-text {
+    font-size: 14px;
+    line-height: 1.8;
+    overflow-wrap: break-word;
+}
+
+/* ==========================================
+   MARKDOWN CONTENT
+========================================== */
+
+.medic-message-text p {
+    margin: 0 0 12px;
+}
+
+.medic-message-text p:last-child {
+    margin-bottom: 0;
+}
+
+.medic-message-text h1,
+.medic-message-text h2,
+.medic-message-text h3 {
+    margin: 18px 0 10px;
+    color: #14532D;
+}
+
+.medic-message-text ul,
+.medic-message-text ol {
+    padding-left: 22px;
+    margin: 10px 0;
+}
+
+.medic-message-text li {
+    margin-bottom: 5px;
+}
+
+.medic-message-text strong {
+    font-weight: 700;
+}
+
+.medic-message-text code {
+    padding: 3px 6px;
+    border-radius: 5px;
+    background: #D9EDE0;
+    font-size: 13px;
+}
+
+.medic-message-text pre {
+    padding: 15px;
+    overflow-x: auto;
+    border-radius: 10px;
+    background: #F1F5F9;
+}
+
+.medic-message-text pre code {
+    background: transparent;
+    padding: 0;
+}
+
+.medic-message-text blockquote {
+    margin: 12px 0;
+    padding: 10px 14px;
+    border-left: 3px solid #16A34A;
+    background: #F0FDF4;
+}
+
+.medic-message-text table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+}
+
+.medic-message-text th,
+.medic-message-text td {
+    border: 1px solid #D1D5DB;
+    padding: 9px;
+    text-align: left;
+}
+
+.medic-message-text th {
+    background: #DCFCE7;
+    color: #14532D;
+}
+
+.medic-message-text a {
+    color: #15803D;
+    text-decoration: underline;
+}
+
+/* ==========================================
+   TYPING INDICATOR
+========================================== */
+
+.medic-typing {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: #E8F5EC;
+}
+
+.medic-typing span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #16A34A;
+}
+
+/* ==========================================
+   INPUT AREA
+========================================== */
+
+.medic-chat-footer {
+    padding: 18px 26px 20px;
+    background: #FFFFFF;
+    border-top: 1px solid #E2EEE5;
+}
+
+.medic-input-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 10px 12px;
+    border: 1px solid #D1E7D8;
+    border-radius: 16px;
+    background: #FFFFFF;
+}
+
+.medic-input-container:focus-within {
+    border-color: #16A34A;
+}
+
+.medic-input-container input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #1F2937;
+    font-size: 14px;
+}
+
+.medic-input-container input::placeholder {
+    color: #94A3B8;
+}
+
+.medic-send-button {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 12px;
+    background: #16A34A;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.medic-send-button:hover {
+    background: #15803D;
+}
+
+.medic-send-button:disabled {
+    background: #A7D8B7;
+    cursor: not-allowed;
+}
+
+.medic-chat-disclaimer {
+    margin-top: 12px;
+    text-align: center;
+    color: #94A3B8;
+    font-size: 11px;
+}
+
+/* ==========================================
+   SCROLLBARS
+========================================== */
+
+.medic-chat-content::-webkit-scrollbar,
+.history-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.medic-chat-content::-webkit-scrollbar-thumb,
+.history-list::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #C7DCCF;
+}
+
+.medic-chat-content::-webkit-scrollbar-track,
+.history-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 1100px) {
+    .medic-chat-history {
+        width: 240px;
+        min-width: 240px;
+    }
+
+    .medic-chat-content {
+        padding: 24px;
+    }
+
+    .medic-chat-welcome h1 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 850px) {
+    .medic-suggestions {
+        grid-template-columns: 1fr;
+    }
+
+    .medic-chat-welcome {
+        margin: 20px auto;
+    }
+
+    .medic-chat-welcome h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 650px) {
+    .medic-chat-history {
+        display: none;
+    }
+
+    .medic-chat-header {
+        padding: 14px 16px;
+    }
+
+    .medic-chat-content {
+        padding: 18px 14px;
+    }
+
+    .medic-chat-footer {
+        padding: 12px 14px;
+    }
+
+    .medic-message-content {
+        max-width: 90%;
+        padding: 13px 14px;
+    }
+
+    .medic-chat-welcome h1 {
+        font-size: 25px;
+    }
+
+    .welcome-description {
+        font-size: 14px;
+    }
+
+    .medic-suggestions {
+        gap: 12px;
+        margin-top: 25px;
+    }
+
+    .medic-suggestion-card {
+        padding: 15px;
+    }
+
+    .chat-header-new {
+        padding: 9px 11px;
+    }
+}
+
+/* ==========================================
+   MEDIC.AI VOICE ASSISTANT
+========================================== */
+
+/* Voice button */
+.medic-voice-button {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #C3E3CE;
+    border-radius: 50%;
+    background: #F0FDF4;
+    color: #15803D;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.medic-voice-button:hover {
+    background: #DCFCE7;
+    border-color: #16A34A;
+}
+
+/* Active recording */
+.medic-voice-button.listening {
+    background: #16A34A;
+    color: #FFFFFF;
+    border-color: #16A34A;
+    animation: medic-pulse 1.5s infinite;
+}
+
+@keyframes medic-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 12px rgba(22, 163, 74, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+    }
+}
+
+/* Listen to AI response */
+.medic-listen-button {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #C3E3CE;
+    border-radius: 50%;
+    background: #FFFFFF;
+    color: #15803D;
+    cursor: pointer;
+}
+
+.medic-listen-button:hover,
+.medic-listen-button.active {
+    background: #DCFCE7;
+    color: #166534;
+}
+
+/* Voice settings */
+.medic-voice-settings {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #C3E3CE;
+    border-radius: 10px;
+    background: #FFFFFF;
+    color: #166534;
+    cursor: pointer;
+}
+
+.medic-voice-settings:hover {
+    background: #F0FDF4;
+}
+
+/* Listening status */
+.medic-voice-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    color: #15803D;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Voice animation bars */
+.medic-voice-bars {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 24px;
+}
+
+.medic-voice-bars span {
+    width: 4px;
+    height: 8px;
+    border-radius: 5px;
+    background: #16A34A;
+    animation: medic-wave 0.8s ease-in-out infinite alternate;
+}
+
+.medic-voice-bars span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.medic-voice-bars span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.medic-voice-bars span:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+@keyframes medic-wave {
+    from {
+        height: 6px;
+    }
+
+    to {
+        height: 22px;
+    }
+}
+
+/* Responsive voice controls */
+@media (max-width: 650px) {
+    .medic-voice-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .medic-listen-button {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* ==========================================
+   VOICE SETTINGS PANEL
+========================================== */
+
+.medic-voice-settings-panel {
+    position: absolute;
+    top: 75px;
+    right: 25px;
+    z-index: 100;
+    width: 280px;
+    padding: 18px;
+    border: 1px solid #D1E7D8;
+    border-radius: 14px;
+    background: #FFFFFF;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+.medic-voice-settings-panel h4 {
+    margin: 0 0 15px;
+    color: #14532D;
+    font-size: 15px;
+}
+
+.medic-voice-settings-panel button {
+    border: none;
+    background: transparent;
+    color: #166534;
+    cursor: pointer;
+}
+
+.medic-voice-settings-panel label {
+    display: block;
+    margin-bottom: 8px;
+    color: #475569;
+    font-size: 12px;
+}
+
+.medic-voice-settings-panel select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #C3E3CE;
+    border-radius: 8px;
+    outline: none;
+    background: #F8FCF9;
+    color: #14532D;
+}
+
+.medic-voice-settings-panel p {
+    margin: 10px 0 0;
+    color: #64748B;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.medic-voice-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ================================
+   MEDIC.AI VOICE MODE
+================================ */
+
+.medic-voice-mode-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 14px;
+    border: 1px solid #C3E3CE;
+    border-radius: 10px;
+    background: #F0FDF4;
+    color: #15803D;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.medic-voice-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(8, 20, 15, 0.94);
+    backdrop-filter: blur(15px);
+}
+
+.medic-voice-modal {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 25px;
+    border: 1px solid rgba(134, 239, 172, 0.2);
+    border-radius: 25px;
+    background: linear-gradient(145deg, #14251C, #07130D);
+    color: white;
+    text-align: center;
+}
+
+.medic-voice-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #355342;
+    border-radius: 50%;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.medic-voice-heading span {
+    color: #86EFAC;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.medic-voice-heading h2 {
+    margin: 18px 0 8px;
+    font-size: clamp(24px, 5vw, 34px);
+}
+
+.medic-voice-heading p {
+    color: #A7B8AC;
+}
+
+.medic-voice-orb {
+    width: 145px;
+    height: 145px;
+    margin: 40px 0 25px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: radial-gradient(circle, #4ADE80, #15803D);
+    color: white;
+    box-shadow: 0 0 45px rgba(34, 197, 94, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.medic-voice-orb.listening {
+    animation: medic-orb-pulse 1.5s infinite;
+}
+
+.medic-voice-orb.speaking {
+    animation: medic-orb-speak 1s infinite alternate;
+}
+
+@keyframes medic-orb-pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(74, 222, 128, .5);
+    }
+
+    70% {
+        transform: scale(1.08);
+        box-shadow: 0 0 0 25px rgba(74, 222, 128, 0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes medic-orb-speak {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.12);
+    }
+}
+
+.medic-voice-wave {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.medic-voice-wave span {
+    width: 4px;
+    height: 6px;
+    border-radius: 5px;
+    background: #4ADE80;
+}
+
+.medic-voice-wave.active span {
+    animation: medic-wave-animation 0.7s ease-in-out infinite alternate;
+}
+
+.medic-voice-wave span:nth-child(3n) {
+    animation-delay: 0.2s;
+}
+
+.medic-voice-wave span:nth-child(3n + 1) {
+    animation-delay: 0.4s;
+}
+
+@keyframes medic-wave-animation {
+    from {
+        height: 6px;
+    }
+
+    to {
+        height: 38px;
+    }
+}
+
+.medic-voice-label {
+    margin: 15px 0;
+    color: #86EFAC;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.medic-voice-transcript {
+    max-width: 90%;
+    margin: 10px 0;
+    padding: 12px 18px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #E2E8F0;
+    font-size: 14px;
+}
+
+.medic-voice-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.medic-voice-main-button,
+.medic-voice-send-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 13px 22px;
+    border: none;
+    border-radius: 30px;
+    background: #22C55E;
+    color: #052E16;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.medic-voice-send-button {
+    background: white;
+    color: #166534;
+}
+
+.medic-voice-main-button:disabled,
+.medic-voice-send-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+    .medic-voice-modal {
+        min-height: 500px;
+        padding: 35px 15px;
+    }
+
+    .medic-voice-orb {
+        width: 120px;
+        height: 120px;
+    }
+
+    .medic-voice-mode-trigger span {
+        display: none;
+    }
+}
+
+/* CONTINUOUS VOICE CONVERSATION */
+
+.medic-continuous-toggle {
+    width: 100%;
+    max-width: 350px;
+    margin-top: 20px;
+    padding: 15px 18px;
+    border: 1px solid rgba(134, 239, 172, 0.25);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    text-align: left;
+}
+
+.medic-continuous-toggle label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.medic-continuous-toggle input {
+    width: 17px;
+    height: 17px;
+    accent-color: #22C55E;
+    cursor: pointer;
+}
+
+.medic-continuous-toggle p {
+    margin: 8px 0 0 27px;
+    color: #A7B8AC;
+    font-size: 12px;
+    line-height: 1.5;
+}
